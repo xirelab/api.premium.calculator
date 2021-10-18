@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "b651cfc1-64bc-4058-9661-4c9747c8a60b",
+		"name": "Premium Calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "occupations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44309/api/calculator/occupations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"api",
+						"calculator",
+						"occupations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Shiju\",\r\n    \"DateOfBirth\": \"1985-05-31\",\r\n    \"DeathCoverAmount\": 10000,\r\n    \"Age\": 36,\r\n    \"OccupationId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44309/api/calculator/calculate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"api",
+						"calculator",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
