@@ -1,4 +1,4 @@
-﻿using api.premium.calculator.Common;
+﻿using api.premium.calculator.Common.Helpers;
 using api.premium.calculator.Models;
 using api.premium.calculator.Services;
 using api.premium.calculator.tests.Common;

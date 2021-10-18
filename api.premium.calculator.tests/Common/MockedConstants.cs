@@ -6,6 +6,18 @@ namespace api.premium.calculator.tests.Common
 {
     public class MockedConstants
     {
+        public static List<User> SampleUsers = new List<User>
+        {
+            new User
+            {
+                Id = 1,
+                FirstName = "Test",
+                LastName = "User",
+                Username = "Test",
+                Password = "Test"
+            }
+        };
+
         public static List<Occupation> SampleOccupations = new List<Occupation>
         {
             new Occupation

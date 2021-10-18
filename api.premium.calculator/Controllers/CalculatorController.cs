@@ -4,9 +4,6 @@ using api.premium.calculator.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace api.premium.calculator.Controllers
 {
@@ -20,6 +17,7 @@ namespace api.premium.calculator.Controllers
             _service = services;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("calculate")]
         [ProducesResponseType(typeof(ApiResult<Decimal>), StatusCodes.Status200OK)]
@@ -35,6 +33,7 @@ namespace api.premium.calculator.Controllers
             return response.Status == Constants.Fail ? BadRequest(response) : Ok(response);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("occupations")]
         [ProducesResponseType(typeof(ApiResult<Occupation>), StatusCodes.Status200OK)]

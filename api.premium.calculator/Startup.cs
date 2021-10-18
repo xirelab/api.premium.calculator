@@ -1,4 +1,5 @@
 using api.premium.calculator.Common;
+using api.premium.calculator.Common.Helpers;
 using api.premium.calculator.Models;
 using api.premium.calculator.Services;
 using api.premium.calculator.Validations;
@@ -33,6 +34,9 @@ namespace api.premium.calculator
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api.premium.calculator", Version = "v1" });
@@ -40,6 +44,8 @@ namespace api.premium.calculator
             services.AddFluentValidation(fv => fv.ImplicitlyValidateChildProperties = true);
 
             services.AddScoped<IFileReader, FileReader>();
+            services.AddScoped<IJwtTokenHelper, JwtTokenHelper>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICalculatorServices, CalculatorServices>();
             services.AddTransient<IValidator<InsuranceDetails>, InsuranceDetailsValidator>();
         }
@@ -63,7 +69,7 @@ namespace api.premium.calculator
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

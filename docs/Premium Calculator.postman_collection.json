@@ -8,6 +8,16 @@
 		{
 			"name": "occupations",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MzQ1NDQ4ODgsImV4cCI6MTYzNTE0OTY4OCwiaWF0IjoxNjM0NTQ0ODg4fQ.sXl_7nXNVf8S_u2Ol4DID9rkXHGy3E-cR8PiUtVmgUc",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -29,6 +39,16 @@
 		{
 			"name": "Calculate",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MzQ1NDQ4ODgsImV4cCI6MTYzNTE0OTY4OCwiaWF0IjoxNjM0NTQ0ODg4fQ.sXl_7nXNVf8S_u2Ol4DID9rkXHGy3E-cR8PiUtVmgUc",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -51,6 +71,36 @@
 						"api",
 						"calculator",
 						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44309/api/calculator/authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"api",
+						"calculator",
+						"authenticate"
 					]
 				}
 			},

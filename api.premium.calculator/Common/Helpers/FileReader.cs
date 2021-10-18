@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace api.premium.calculator.Common
+namespace api.premium.calculator.Common.Helpers
 {
     public interface IFileReader
     {
